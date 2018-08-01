@@ -8,7 +8,7 @@ This image is intended to be used in development environments, such as for testi
 The following shell statement will start the *Neo4j* on port 7474 and 7687.
 
 ```sh
-docker run --rm -it -p 8538:8538 aongko/python-neo4j python
+docker run --rm -it -p 7474:7474 -p 7687:7687 aongko/python-neo4j python
 ```
 
 For more information, please refer to: [https://hub.docker.com/_/neo4j/](https://hub.docker.com/_/neo4j/)
