@@ -2,7 +2,9 @@ FROM python:3.6.6
 
 RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" | tee -a /etc/apt/sources.list.d/jessie-backports.list \
   && apt-get update \
-  && apt-get -t jessie-backports install -y ca-certificates-java
+  && apt-get -t jessie-backports install -y ca-certificates-java \
+  && apt-get upgrade -y \
+  && apt-get autoremove -y
 
 RUN apt-get install -y apt-transport-https \
   && wget -O - https://debian.neo4j.org/neotechnology.gpg.key | apt-key add - \
