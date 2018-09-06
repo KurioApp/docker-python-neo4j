@@ -1,4 +1,4 @@
-FROM python:3.6.6
+FROM python:3.7.0
 
 RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" | tee -a /etc/apt/sources.list.d/jessie-backports.list \
   && apt-get update \
