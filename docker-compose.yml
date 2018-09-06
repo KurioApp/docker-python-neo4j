@@ -1,10 +1,9 @@
 version: '3'
 services:
-  pubsub-emulator:
-    image: aongko/pubsub-emulator
-    container_name: pubsub_emulator
+  neo4j:
+    image: asia.gcr.io/kurio-dev/python-neo4j
+    container_name: python-neo4j
     ports:
-      - "8538:8538"
-    volumes:
-      - ./data:/data
-    command: ["start", "--host-port=0.0.0.0:8538", "--data-dir=/data"]
+      - "7474:7474"
+      - "7687:7687"
+    command: neo4j start
